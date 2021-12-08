@@ -13,6 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: '[name].bundle.js'
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
+  devtool: 'inline-source-map',
   performance: {
     hints: false,
     maxEntrypointSize: 512000,
