@@ -20,16 +20,9 @@ module.exports = {
       },
       {
         test: /\.jpg$/,
-        use: [
-          'file-loader',
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              bypassOnDebug: true,
-              disable: true,
-            },
-          },
-        ]
+        use: {
+          loader: 'file-loader'
+        }
       }
     ]
   }
