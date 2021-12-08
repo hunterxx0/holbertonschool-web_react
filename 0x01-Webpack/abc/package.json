@@ -2,8 +2,9 @@
   "name": "task_1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bundle.js",
   "scripts": {
+    "dev": "webpack --mode development",
     "build": "webpack"
   },
   "keywords": [],
