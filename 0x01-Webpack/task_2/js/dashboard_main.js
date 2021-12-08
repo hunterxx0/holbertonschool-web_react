@@ -1,5 +1,5 @@
 import $ from "jquery";
-const _ = require('lodash');
+import _ from "lodash";
 import '../css/main.css';
 
 $('body').append('<div id="logo"></div>');
