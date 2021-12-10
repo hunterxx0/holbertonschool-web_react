@@ -1,27 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, '..', 'dist'),
+    path: path.resolve(__dirname, '..', './dist'),
     filename: 'bundle.js'
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
   devtool: 'inline-source-map',
-  plugins: [new HtmlWebpackPlugin(), new CleanWebpackPlugin()],
-  devServer: {
-    contentBase: '../dist',
-    open: true,
-    port: 8564,
-    hot: true,
-  },
+  plugins: [new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: './dist/index.html'
+  })],
   module: {
     rules: [
       {
@@ -29,7 +21,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       },
       {
-        test: /\.jpg$/,
+        test: /\.(jpg|png)$/,
         use: [
           'file-loader',
           {
@@ -39,7 +31,17 @@ module.exports = {
             },
           },
         ]
-      }
+      },
+      {
+        test: /\.m?(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', ["@babel/preset-react", {"runtime": "automatic"}]]
+          }
+        }
+      },
     ]
   }
 };
