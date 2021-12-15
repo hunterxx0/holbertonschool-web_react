@@ -1,0 +1,20 @@
+.Notifications {
+  border: 3px dashed #e01d3f;
+  padding: 50px;
+}
+
+ul li[data-priority='default'] {
+  color: blue;
+}
+
+ul li[data-priority='urgent'] {
+  color: red;
+}
+
+.close-b {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+}
