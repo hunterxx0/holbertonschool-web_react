@@ -1,10 +1,15 @@
-const { List } = require('immutable');
+const { Map  } = require('immutable');
 
 
-export function getListObject(array) {
-	return List(array);
-}
+export const map = Map({
+	1: 'Liam',
+	2: 'Noah',
+	3: 'Elijah',
+	4: 'Oliver',
+	5: 'Jacob',
+	6: 'Lucas',
+});
 
-export function addElementToList(list, element) {
-	return list.push(element);
-}
+export const map2 = map.withMutations((mapItem) => {
+  mapItem.set(2, 'Benjamin').set(4, 'Oliver');
+});
