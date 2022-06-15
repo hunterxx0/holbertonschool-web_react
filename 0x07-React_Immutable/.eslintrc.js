@@ -6,6 +6,8 @@ module.exports = {
   'extends': [
     'plugin:react/recommended',
     'google',
+    "eslint:recommended",
+    "plugin:react/recommended"
   ],
   'parserOptions': {
     'ecmaFeatures': {
@@ -18,5 +20,7 @@ module.exports = {
     'react',
   ],
   'rules': {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
   },
 };
