@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import {Map, List} from 'immutable';
 
 /**

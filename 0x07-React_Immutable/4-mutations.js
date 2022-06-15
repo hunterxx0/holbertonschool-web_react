@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import {Map} from 'immutable';
 
 export const map = Map({
