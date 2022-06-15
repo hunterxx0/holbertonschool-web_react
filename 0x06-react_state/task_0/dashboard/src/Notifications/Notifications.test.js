@@ -46,17 +46,6 @@ describe('render the Notification component without a list', () => {
     expect(wrapper.find('.Notifications').exists()).toEqual(true);
   });
 
-  test('markAsRead is being called with the right message', () => {
-    const wrapper = shallow(<Notifications displayDrawer />);
-    const logSpy = jest.spyOn(console, 'log');
-    const instance = wrapper.instance();
-    instance.markAsRead(0);
-    expect(logSpy).toHaveBeenCalledWith(
-      `Notification 0 has been marked as read`
-    );
-    jest.restoreAllMocks();
-  });
-
   test("check handleDisplayDrawer", () => {
     const handleDisplayDrawer = jest.fn();
     const handleHideDrawer = jest.fn();
