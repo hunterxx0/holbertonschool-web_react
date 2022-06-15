@@ -9,7 +9,8 @@
   border: 3px dashed #e01d3f;
   padding: 5px;
   width: 30%;
-  height: 30%;
+  min-height: 50px;
+  overflow: hidden;
   position:absolute;
   right: 1em;
   margin-top: 50px;
