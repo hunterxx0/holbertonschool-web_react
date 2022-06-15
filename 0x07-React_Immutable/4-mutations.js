@@ -1,4 +1,4 @@
-const { Map  } = require('immutable');
+const { Map } = require('immutable');
 
 
 export const map = Map({
